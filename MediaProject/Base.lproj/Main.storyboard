@@ -118,7 +118,7 @@
                                                 <imageReference key="image" image="chevron.down" catalog="system" symbolScale="large"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="allOverViewButtonClick:" destination="atk-3c-ncs" eventType="touchUpInside" id="nGM-FV-A7M"/>
+                                                <action selector="allOverViewButtonClick:" destination="atk-3c-ncs" eventType="touchUpInside" id="jmP-D8-AAk"/>
                                             </connections>
                                         </button>
                                     </subviews>

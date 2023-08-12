@@ -39,7 +39,7 @@ class MediaDetailViewController: UIViewController {
         detailTableView.rowHeight = 100
         
         DispatchQueue.global().async {
-            self.mediaAPI()
+            self.apiData()
         }
     }
     
@@ -58,42 +58,35 @@ class MediaDetailViewController: UIViewController {
 
 //API
 extension MediaDetailViewController{
-    func mediaAPI() {
+    func apiData() {
+        
         let url = "https://api.themoviedb.org/3/movie/\(mediaData?.id ?? "")/credits?api_key=\(APIKey.tmdbKey)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result{
-            case .success(let value):
-                let json = JSON(value)
-                
-                var profileImage = String()
-                var name = String()
-                var overview = String()
-                
-                let crew = json["crew"].arrayValue[0...10]
-                for item in crew{
+        MediaInfo.mediaAPI(url: url) { json in
+            var profileImage = String()
+            var name = String()
+            var overview = String()
+            
+            let crew = json["crew"].arrayValue[0...10]
+            for item in crew{
 
-                    profileImage = item["profile_path"].stringValue
-                    name = item["name"].stringValue
-                    overview = item["department"].stringValue
+                profileImage = item["profile_path"].stringValue
+                name = item["name"].stringValue
+                overview = item["department"].stringValue
 
-                    self.crewArray.append(ProfileData(profileImage: profileImage, name: name, overview: overview))
-                }
-                
-                let cast = json["cast"].arrayValue[0...10]
-                for item in cast {
-
-                    profileImage = item["profile_path"].stringValue
-                    name = item["name"].stringValue
-                    overview = item["character"].stringValue
-
-                    self.castArray.append(ProfileData(profileImage: profileImage, name: name, overview: overview))
-                }
-
-                self.detailTableView.reloadData()
-                
-            case .failure(let error):
-                print(error)
+                self.crewArray.append(ProfileData(profileImage: profileImage, name: name, overview: overview))
             }
+            
+            let cast = json["cast"].arrayValue[0...10]
+            for item in cast {
+
+                profileImage = item["profile_path"].stringValue
+                name = item["name"].stringValue
+                overview = item["character"].stringValue
+
+                self.castArray.append(ProfileData(profileImage: profileImage, name: name, overview: overview))
+            }
+
+            self.detailTableView.reloadData()
         }
     }
 }

@@ -25,37 +25,31 @@ class MediaListViewController: UIViewController {
         mediaListTableView.register(nib, forCellReuseIdentifier: MediaListTableViewCell.identifier)
         
         DispatchQueue.global().async {
-            self.mediaAPI()
+            self.apiData()
         }
     }
 }
 
 //API
 extension MediaListViewController{
-    func mediaAPI() {
+    func apiData() {
+        
         let url = "https://api.themoviedb.org/3/trending/movie/week?api_key=\(APIKey.tmdbKey)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result{
-            case .success(let value):
-                let json = JSON(value)
+        MediaInfo.mediaAPI(url: url) { json in
 
-                for item in json["results"].arrayValue {
-                    //print(item)
-                    let id = item["id"].stringValue
-                    let title = item["title"].stringValue
-                    let overview = item["overview"].stringValue
-                    let release_date = item["release_date"].stringValue
-                    let backdrop_path = item["backdrop_path"].stringValue
-                    let poster_path = item["poster_path"].stringValue
-                    
-                    self.mediaListArray.append(MediaData(id: id, title: title, overview: overview, release_date: release_date, backdrop_path: backdrop_path, poster_path: poster_path))
-                }
+            for item in json["results"].arrayValue {
 
-                self.mediaListTableView.reloadData()
+                let id = item["id"].stringValue
+                let title = item["title"].stringValue
+                let overview = item["overview"].stringValue
+                let release_date = item["release_date"].stringValue
+                let backdrop_path = item["backdrop_path"].stringValue
+                let poster_path = item["poster_path"].stringValue
                 
-            case .failure(let error):
-                print(error)
+                self.mediaListArray.append(MediaData(id: id, title: title, overview: overview, release_date: release_date, backdrop_path: backdrop_path, poster_path: poster_path))
             }
+
+            self.mediaListTableView.reloadData()
         }
     }
 }
