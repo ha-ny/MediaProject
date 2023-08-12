@@ -7,10 +7,22 @@
 
 import Foundation
 
-struct mediaData{
+struct MediaData{
     let id: String
     let title: String
     let overview: String
     let release_date: String
     let backdrop_path: String
+    let poster_path: String
+}
+
+struct ProfileData{
+    let profileImage: String
+    let name: String
+    let overview: String
+}
+
+enum DetailSection: Int, CaseIterable{
+    case Crew
+    case Cast
 }

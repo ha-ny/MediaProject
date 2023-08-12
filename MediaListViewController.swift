@@ -14,7 +14,7 @@ class MediaListViewController: UIViewController {
 
     @IBOutlet var mediaListTableView: UITableView!
     
-    var mediaListArray = [mediaData]()
+    var mediaListArray = [MediaData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,7 @@ extension MediaListViewController{
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
-                print(json)
-                
+
                 for item in json["results"].arrayValue {
                     //print(item)
                     let id = item["id"].stringValue
@@ -47,8 +46,9 @@ extension MediaListViewController{
                     let overview = item["overview"].stringValue
                     let release_date = item["release_date"].stringValue
                     let backdrop_path = item["backdrop_path"].stringValue
-
-                    self.mediaListArray.append(mediaData(id: id, title: title, overview: overview, release_date: release_date, backdrop_path: backdrop_path))
+                    let poster_path = item["poster_path"].stringValue
+                    
+                    self.mediaListArray.append(MediaData(id: id, title: title, overview: overview, release_date: release_date, backdrop_path: backdrop_path, poster_path: poster_path))
                 }
 
                 self.mediaListTableView.reloadData()
@@ -83,9 +83,9 @@ extension MediaListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("-------------------didSelectRowAt----------")
         guard let vc = storyboard?.instantiateViewController(identifier: MediaDetailViewController.identifier) as? MediaDetailViewController else { return }
-        
+        vc.mediaData = mediaListArray[indexPath.row]
+
         navigationController?.pushViewController(vc, animated: true)
     }
 }

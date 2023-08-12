@@ -24,6 +24,8 @@
 		3F568E112A87920C002A7A2E /* MediaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F568E102A87920C002A7A2E /* MediaInfo.swift */; };
 		3F568E132A87AA3B002A7A2E /* MediaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */; };
 		3F568E152A87B82D002A7A2E /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */; };
+		3F568E1A2A87CFD4002A7A2E /* MediaDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F568E182A87CFD4002A7A2E /* MediaDetailTableViewCell.swift */; };
+		3F568E1B2A87CFD4002A7A2E /* MediaDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F568E192A87CFD4002A7A2E /* MediaDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		3F568E102A87920C002A7A2E /* MediaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
 		3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewController.swift; sourceTree = SOURCE_ROOT; };
 		3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		3F568E182A87CFD4002A7A2E /* MediaDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		3F568E192A87CFD4002A7A2E /* MediaDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		3F568DE42A87821E002A7A2E /* MediaProject */ = {
 			isa = PBXGroup;
 			children = (
+				3F568E182A87CFD4002A7A2E /* MediaDetailTableViewCell.swift */,
+				3F568E192A87CFD4002A7A2E /* MediaDetailTableViewCell.xib */,
 				3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */,
 				3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */,
 				3F568E0E2A878FD6002A7A2E /* APIKey.swift */,
@@ -170,6 +176,7 @@
 				3F568DEF2A878220002A7A2E /* Assets.xcassets in Resources */,
 				3F568E022A878470002A7A2E /* MediaListTableViewCell.xib in Resources */,
 				3F568DED2A87821E002A7A2E /* Main.storyboard in Resources */,
+				3F568E1B2A87CFD4002A7A2E /* MediaDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,7 @@
 				3F568E152A87B82D002A7A2E /* MediaDetailViewController.swift in Sources */,
 				3F568E0F2A878FD6002A7A2E /* APIKey.swift in Sources */,
 				3F568DEA2A87821E002A7A2E /* ViewController.swift in Sources */,
+				3F568E1A2A87CFD4002A7A2E /* MediaDetailTableViewCell.swift in Sources */,
 				3F568DFE2A878305002A7A2E /* ExtensionView.swift in Sources */,
 				3F568DE62A87821E002A7A2E /* AppDelegate.swift in Sources */,
 				3F568E112A87920C002A7A2E /* MediaInfo.swift in Sources */,
