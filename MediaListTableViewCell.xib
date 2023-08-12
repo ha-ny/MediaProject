@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="328" id="KGk-i7-Jjw" customClass="MediaListTableViewCell" customModule="MediaProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="328"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="305" height="328"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdL-cf-Ip1" userLabel="back View">
+                        <rect key="frame" x="8" y="8" width="289" height="280"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bb7-9D-JSq">
+                                <rect key="frame" x="0.0" y="0.0" width="289" height="160.66666666666666"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bb7-9D-JSq" secondAttribute="height" multiplier="4.5:2.5" id="FPz-4L-Jjv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZi-6k-JCW">
+                                <rect key="frame" x="8" y="184.66666666666666" width="273" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-EU-FuM">
+                                <rect key="frame" x="8" y="206.66666666666666" width="273" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAe-QO-k8Y">
+                                <rect key="frame" x="8" y="162.66666666666666" width="273" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bb7-9D-JSq" firstAttribute="leading" secondItem="EdL-cf-Ip1" secondAttribute="leading" id="0hb-ud-DmH"/>
+                            <constraint firstItem="HZi-6k-JCW" firstAttribute="top" secondItem="HAe-QO-k8Y" secondAttribute="bottom" constant="8" id="E4o-zH-xC0"/>
+                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="trailing" secondItem="HZi-6k-JCW" secondAttribute="trailing" id="HkE-2e-egs"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZQd-EU-FuM" secondAttribute="bottom" constant="4" id="JKi-ht-iCT"/>
+                            <constraint firstItem="bb7-9D-JSq" firstAttribute="top" secondItem="EdL-cf-Ip1" secondAttribute="top" id="Y7o-Lt-guW"/>
+                            <constraint firstItem="HAe-QO-k8Y" firstAttribute="leading" secondItem="EdL-cf-Ip1" secondAttribute="leading" constant="8" id="ZOT-LG-1GU"/>
+                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="leading" secondItem="HZi-6k-JCW" secondAttribute="leading" id="bJD-5B-e4n"/>
+                            <constraint firstAttribute="trailing" secondItem="HAe-QO-k8Y" secondAttribute="trailing" constant="8" id="bMm-wE-AO3"/>
+                            <constraint firstItem="HAe-QO-k8Y" firstAttribute="top" secondItem="bb7-9D-JSq" secondAttribute="bottom" constant="2" id="dF7-tG-KhK"/>
+                            <constraint firstAttribute="trailing" secondItem="HZi-6k-JCW" secondAttribute="trailing" constant="8" id="n01-Ef-6wo"/>
+                            <constraint firstItem="HZi-6k-JCW" firstAttribute="leading" secondItem="EdL-cf-Ip1" secondAttribute="leading" constant="8" id="oDK-OQ-lZZ"/>
+                            <constraint firstAttribute="trailing" secondItem="bb7-9D-JSq" secondAttribute="trailing" id="tip-kz-1Se"/>
+                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="top" secondItem="HZi-6k-JCW" secondAttribute="bottom" constant="4" id="tnn-a2-E7r"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="EdL-cf-Ip1" secondAttribute="bottom" constant="40" id="7pz-d9-Ctp"/>
+                    <constraint firstAttribute="trailing" secondItem="EdL-cf-Ip1" secondAttribute="trailing" constant="8" id="GyJ-IJ-3a5"/>
+                    <constraint firstItem="EdL-cf-Ip1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jQy-Zs-su9"/>
+                    <constraint firstItem="EdL-cf-Ip1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="x98-AM-Zqd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="EdL-cf-Ip1" id="XAZ-Lf-8Wx"/>
+                <outlet property="dateLabel" destination="HAe-QO-k8Y" id="LID-gd-0B1"/>
+                <outlet property="mediaImageView" destination="bb7-9D-JSq" id="zH0-ok-VcD"/>
+                <outlet property="mediaOverviewLabel" destination="ZQd-EU-FuM" id="6rW-hr-zFc"/>
+                <outlet property="mediaTitleLabel" destination="HZi-6k-JCW" id="TFB-od-1uS"/>
+            </connections>
+            <point key="canvasLocation" x="147.32824427480915" y="69.014084507042256"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
