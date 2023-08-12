@@ -13,8 +13,8 @@ extension UIViewController{
     }
 }
 
-extension UITableViewCell{
-    static var identifier: String{
+extension UIView{
+    static var identifier: String {
         return String(describing: self)
     }
 }
