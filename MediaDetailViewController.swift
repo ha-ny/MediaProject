@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 import Kingfisher
 
 class MediaDetailViewController: UIViewController {
@@ -19,11 +18,11 @@ class MediaDetailViewController: UIViewController {
     @IBOutlet var overViewLabel: UILabel!
     @IBOutlet var allOverViewButton: UIButton!
     
-    var crewArray: [ProfileData] = []
-    var castArray: [ProfileData] = []
+    var crewArray: [TmdbDetailData.Profile] = []
+    var castArray: [TmdbDetailData.Profile] = []
     
     //MediaListViewController에서 값 넘겨줌
-    var mediaData: MediaData?
+    var mediaData: TmdbListData.Result!
     var isOverViewDown = false
     
     override func viewDidLoad() {
@@ -58,34 +57,13 @@ class MediaDetailViewController: UIViewController {
 
 //API
 extension MediaDetailViewController{
+    
     func apiData() {
         
-        let url = "https://api.themoviedb.org/3/movie/\(mediaData?.id ?? "")/credits?api_key=\(APIKey.tmdbKey)"
-        MediaInfo.mediaAPI(url: url) { json in
-            var profileImage = String()
-            var name = String()
-            var overview = String()
-            
-            let crew = json["crew"].arrayValue[0...10]
-            for item in crew{
+        TmdbManager.shard.callApiData(url: "https://api.themoviedb.org/3/movie/\(mediaData.id)/credits?api_key=\(APIKey.tmdbKey)") { data in
 
-                profileImage = item["profile_path"].stringValue
-                name = item["name"].stringValue
-                overview = item["department"].stringValue
-
-                self.crewArray.append(ProfileData(profileImage: profileImage, name: name, overview: overview))
-            }
-            
-            let cast = json["cast"].arrayValue[0...10]
-            for item in cast {
-
-                profileImage = item["profile_path"].stringValue
-                name = item["name"].stringValue
-                overview = item["character"].stringValue
-
-                self.castArray.append(ProfileData(profileImage: profileImage, name: name, overview: overview))
-            }
-
+            self.crewArray = data.crew
+            self.castArray = data.cast
             self.detailTableView.reloadData()
         }
     }
@@ -100,7 +78,11 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return section == DetailSection.Crew.rawValue ? crewArray.count : castArray.count
+        if crewArray.count < 1{
+            return section == DetailSection.Crew.rawValue ? crewArray.count : castArray.count
+        }else{
+            return 10
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,10 +90,9 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaDetailTableViewCell.identifier) as? MediaDetailTableViewCell else { return UITableViewCell() }
 
         let data = indexPath.section == DetailSection.Crew.rawValue ? crewArray[indexPath.row] : castArray[indexPath.row]
-        print()
-        cell.detailImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.profileImage))
+        cell.detailImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/\(data.profilePath ?? "")"))
         cell.detailNameLabel.text = data.name
-        cell.detailOverviewLabel.text = data.overview
+        cell.detailOverviewLabel.text = data.character ?? data.job
 
         return cell
     }
@@ -125,9 +106,9 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource{
 extension MediaDetailViewController{
     func viewSetting() {
         guard let data = mediaData else { return }
-        
-        backImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.backdrop_path))
-        posterImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.poster_path))
+
+        backImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.backdropPath))
+        posterImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.posterPath))
         titleLabel.text = data.title
         overViewLabel.text = data.overview
     }

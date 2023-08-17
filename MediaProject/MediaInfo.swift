@@ -7,40 +7,39 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
-
-struct MediaData{
-    let id: String
-    let title: String
-    let overview: String
-    let release_date: String
-    let backdrop_path: String
-    let poster_path: String
-}
-
-struct ProfileData{
-    let profileImage: String
-    let name: String
-    let overview: String
-}
 
 enum DetailSection: Int, CaseIterable{
-    case Crew
     case Cast
+    case Crew
 }
 
-struct MediaInfo{
+//재활용하고싶다...
+class TmdbManager{
     
-    static func mediaAPI(url: String, valueJson: @escaping (JSON) -> ()) {
-        let url = url
-        AF.request(url, method: .get).validate().responseJSON { response in
+    static let shard = TmdbManager()
+
+    func callApiData(url: String, backValue: @escaping (TmdbListData.MovieListData) -> Void){
+
+        AF.request(url).validate().responseDecodable(of: TmdbListData.MovieListData.self) { response in
             switch response.result{
             case .success(let value):
-                let json = JSON(value)
-                valueJson(json)
+                backValue(value)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func callApiData(url: String, backValue: @escaping (TmdbDetailData.MovieDetail) -> Void){
+
+        AF.request(url).validate().responseDecodable(of: TmdbDetailData.MovieDetail.self) { response in
+            switch response.result{
+            case .success(let value):
+                backValue(value)
             case .failure(let error):
                 print(error)
             }
         }
     }
 }
+
