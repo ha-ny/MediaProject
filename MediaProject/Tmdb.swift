@@ -28,7 +28,7 @@ class TmdbListData{
         
         let backdropPath: String
         let id: Int
-        let title: String
+        let title, original_title: String
         let overview, posterPath: String
         let genreIDS: [Int]
         let releaseDate: String
@@ -36,7 +36,7 @@ class TmdbListData{
         enum CodingKeys: String, CodingKey {
             
             case backdropPath = "backdrop_path"
-            case id, title
+            case id, title, original_title
             case overview
             case posterPath = "poster_path"
             case genreIDS = "genre_ids"

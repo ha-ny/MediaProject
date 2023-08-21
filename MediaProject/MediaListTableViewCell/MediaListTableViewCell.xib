@@ -27,8 +27,8 @@
                                     <constraint firstAttribute="width" secondItem="bb7-9D-JSq" secondAttribute="height" multiplier="4.5:2.5" id="FPz-4L-Jjv"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZi-6k-JCW">
-                                <rect key="frame" x="8" y="184.66666666666666" width="273" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZi-6k-JCW">
+                                <rect key="frame" x="8" y="184.66666666666666" width="26" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,22 +45,31 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오리지널 타이틀" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxf-2t-jc8">
+                                <rect key="frame" x="36" y="184.66666666666666" width="245" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bb7-9D-JSq" firstAttribute="leading" secondItem="EdL-cf-Ip1" secondAttribute="leading" id="0hb-ud-DmH"/>
+                            <constraint firstAttribute="trailing" secondItem="fxf-2t-jc8" secondAttribute="trailing" constant="8" id="72V-Nb-Ph6"/>
                             <constraint firstItem="HZi-6k-JCW" firstAttribute="top" secondItem="HAe-QO-k8Y" secondAttribute="bottom" constant="8" id="E4o-zH-xC0"/>
-                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="trailing" secondItem="HZi-6k-JCW" secondAttribute="trailing" id="HkE-2e-egs"/>
+                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="leading" secondItem="HAe-QO-k8Y" secondAttribute="leading" id="Efj-DT-yjP"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZQd-EU-FuM" secondAttribute="bottom" constant="4" id="JKi-ht-iCT"/>
                             <constraint firstItem="bb7-9D-JSq" firstAttribute="top" secondItem="EdL-cf-Ip1" secondAttribute="top" id="Y7o-Lt-guW"/>
                             <constraint firstItem="HAe-QO-k8Y" firstAttribute="leading" secondItem="EdL-cf-Ip1" secondAttribute="leading" constant="8" id="ZOT-LG-1GU"/>
-                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="leading" secondItem="HZi-6k-JCW" secondAttribute="leading" id="bJD-5B-e4n"/>
                             <constraint firstAttribute="trailing" secondItem="HAe-QO-k8Y" secondAttribute="trailing" constant="8" id="bMm-wE-AO3"/>
+                            <constraint firstItem="fxf-2t-jc8" firstAttribute="leading" secondItem="HZi-6k-JCW" secondAttribute="trailing" constant="2" id="baq-sx-U6w"/>
                             <constraint firstItem="HAe-QO-k8Y" firstAttribute="top" secondItem="bb7-9D-JSq" secondAttribute="bottom" constant="2" id="dF7-tG-KhK"/>
-                            <constraint firstAttribute="trailing" secondItem="HZi-6k-JCW" secondAttribute="trailing" constant="8" id="n01-Ef-6wo"/>
+                            <constraint firstItem="fxf-2t-jc8" firstAttribute="bottom" secondItem="HZi-6k-JCW" secondAttribute="bottom" id="kYk-wU-GdS"/>
                             <constraint firstItem="HZi-6k-JCW" firstAttribute="leading" secondItem="EdL-cf-Ip1" secondAttribute="leading" constant="8" id="oDK-OQ-lZZ"/>
+                            <constraint firstItem="fxf-2t-jc8" firstAttribute="top" secondItem="HZi-6k-JCW" secondAttribute="top" id="qoj-oo-vEr"/>
                             <constraint firstAttribute="trailing" secondItem="bb7-9D-JSq" secondAttribute="trailing" id="tip-kz-1Se"/>
                             <constraint firstItem="ZQd-EU-FuM" firstAttribute="top" secondItem="HZi-6k-JCW" secondAttribute="bottom" constant="4" id="tnn-a2-E7r"/>
+                            <constraint firstItem="ZQd-EU-FuM" firstAttribute="trailing" secondItem="HAe-QO-k8Y" secondAttribute="trailing" id="xJ8-NN-INY"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -76,6 +85,7 @@
                 <outlet property="backView" destination="EdL-cf-Ip1" id="XAZ-Lf-8Wx"/>
                 <outlet property="dateLabel" destination="HAe-QO-k8Y" id="LID-gd-0B1"/>
                 <outlet property="mediaImageView" destination="bb7-9D-JSq" id="zH0-ok-VcD"/>
+                <outlet property="mediaOrginalTitleLabel" destination="fxf-2t-jc8" id="Srw-Nx-D6g"/>
                 <outlet property="mediaOverviewLabel" destination="ZQd-EU-FuM" id="6rW-hr-zFc"/>
                 <outlet property="mediaTitleLabel" destination="HZi-6k-JCW" id="TFB-od-1uS"/>
             </connections>

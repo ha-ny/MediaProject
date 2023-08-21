@@ -13,6 +13,7 @@ class MediaListTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var mediaImageView: UIImageView!
     @IBOutlet var mediaTitleLabel: UILabel!
+    @IBOutlet var mediaOrginalTitleLabel: UILabel!
     @IBOutlet var mediaOverviewLabel: UILabel!
     
     override func awakeFromNib() {

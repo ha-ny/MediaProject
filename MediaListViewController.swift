@@ -55,6 +55,7 @@ extension MediaListViewController: UITableViewDelegate, UITableViewDataSource{
         let data = mediaListArray.results[indexPath.row]
         cell.dateLabel.text = data.releaseDate
         cell.mediaTitleLabel.text = data.title
+        cell.mediaOrginalTitleLabel.text = "(\(data.original_title))"
         cell.mediaOverviewLabel.text = data.overview
         
         cell.mediaImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.backdropPath))
