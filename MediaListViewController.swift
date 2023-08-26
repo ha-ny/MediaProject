@@ -8,24 +8,34 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SnapKit
 
 class MediaListViewController: UIViewController {
-
-    @IBOutlet var mediaListTableView: UITableView!
+    
+    let mediaListTableView = {
+        let view = UITableView()
+        view.separatorStyle = .none
+        return view
+    }()
 
     var mediaListArray: TmdbListData.MovieListData = TmdbListData.MovieListData(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "MOVIE"
+        view.backgroundColor = .white
+        view.addSubview(mediaListTableView)
         mediaListTableView.delegate = self
         mediaListTableView.dataSource = self
+
+        mediaListTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         let nib = UINib(nibName: MediaListTableViewCell.identifier, bundle: nil)
         mediaListTableView.register(nib, forCellReuseIdentifier: MediaListTableViewCell.identifier)
         
-        DispatchQueue.global().async {
-            self.apiData()
-        }
+        apiData()
     }
 }
 
@@ -64,8 +74,7 @@ extension MediaListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let vc = storyboard?.instantiateViewController(identifier: MediaDetailViewController.identifier) as? MediaDetailViewController else { return }
+        let vc = MediaDetailViewController()
         vc.mediaData = mediaListArray.results[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }

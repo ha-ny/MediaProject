@@ -28,5 +28,7 @@ class MediaListTableViewCell: UITableViewCell {
         
         mediaImageView.layer.cornerRadius = 10
         mediaImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        //layout ifneeded, 
     }
 }
