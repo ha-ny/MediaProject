@@ -12,28 +12,22 @@ import SnapKit
 
 class MediaListViewController: UIViewController {
     
-    let mediaListTableView = {
-        let view = UITableView()
-        view.separatorStyle = .none
-        return view
-    }()
-
+    let mainView = MediaListView()
     var mediaListArray: TmdbListData.MovieListData = TmdbListData.MovieListData(page: 0, results: [], totalPages: 0, totalResults: 0)
+    
+    override func loadView() {
+        self.view = mainView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "MOVIE"
         view.backgroundColor = .white
-        view.addSubview(mediaListTableView)
-        mediaListTableView.delegate = self
-        mediaListTableView.dataSource = self
+        mainView.mediaListTableView.delegate = self
+        mainView.mediaListTableView.dataSource = self
 
-        mediaListTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
         let nib = UINib(nibName: MediaListTableViewCell.identifier, bundle: nil)
-        mediaListTableView.register(nib, forCellReuseIdentifier: MediaListTableViewCell.identifier)
+        mainView.mediaListTableView.register(nib, forCellReuseIdentifier: MediaListTableViewCell.identifier)
         
         apiData()
     }
@@ -46,7 +40,7 @@ extension MediaListViewController{
         TmdbManager.shard.callApiData(url: "https://api.themoviedb.org/3/trending/movie/week?api_key=\(APIKey.tmdbKey)") { data in
 
             self.mediaListArray = data
-            self.mediaListTableView.reloadData()
+            self.mainView.mediaListTableView.reloadData()
         }
     }
 }

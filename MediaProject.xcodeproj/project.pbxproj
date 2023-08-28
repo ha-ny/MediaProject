@@ -27,6 +27,8 @@
 		3FE81EBE2A9A63D10077E18A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EBD2A9A63D10077E18A /* IntroViewController.swift */; };
 		3FE81EC12A9A63F80077E18A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE81EC02A9A63F80077E18A /* SnapKit */; };
 		3FE81EC32A9A65DA0077E18A /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EC22A9A65DA0077E18A /* OnboardingPageViewController.swift */; };
+		3FE81EFA2A9D25750077E18A /* MediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EF92A9D25750077E18A /* MediaDetailView.swift */; };
+		3FE81EFE2A9D28630077E18A /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EFD2A9D28630077E18A /* MediaListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,12 +45,14 @@
 		3F568E0C2A878FBC002A7A2E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = MediaProject/API/.gitignore; sourceTree = SOURCE_ROOT; };
 		3F568E0E2A878FD6002A7A2E /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = MediaProject/API/APIKey.swift; sourceTree = SOURCE_ROOT; };
 		3F568E102A87920C002A7A2E /* MediaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfo.swift; sourceTree = "<group>"; };
-		3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewController.swift; sourceTree = SOURCE_ROOT; };
-		3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaListViewController.swift; path = MediaProject/MediaListView/MediaListViewController.swift; sourceTree = SOURCE_ROOT; };
+		3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaDetailViewController.swift; path = MediaProject/MediaDetailView/MediaDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		3F568E182A87CFD4002A7A2E /* MediaDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MediaDetailTableViewCell.swift; path = MediaProject/MediaDetailTableViewCell/MediaDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3F568E192A87CFD4002A7A2E /* MediaDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MediaDetailTableViewCell.xib; path = MediaProject/MediaDetailTableViewCell/MediaDetailTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		3FE81EBD2A9A63D10077E18A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		3FE81EC22A9A65DA0077E18A /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		3FE81EF92A9D25750077E18A /* MediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailView.swift; sourceTree = "<group>"; };
+		3FE81EFD2A9D28630077E18A /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +91,11 @@
 				3F568E1F2A87DFCF002A7A2E /* MediaListTableViewCell */,
 				3F568E1C2A87DF5A002A7A2E /* MediaDetailTableViewCell */,
 				3FE81EC42A9A6D000077E18A /* Intro */,
-				3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */,
-				3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */,
-				3F568DFD2A878305002A7A2E /* ExtensionView.swift */,
+				3FE81EFB2A9D25960077E18A /* MediaDetailView */,
+				3FE81EFC2A9D28320077E18A /* MediaListView */,
 				3F568E102A87920C002A7A2E /* MediaInfo.swift */,
 				3F35D4252A8E0360001DF40F /* Tmdb.swift */,
+				3F568DFD2A878305002A7A2E /* ExtensionView.swift */,
 				3F568E1E2A87DFA2002A7A2E /* API */,
 				3F568E1D2A87DF8F002A7A2E /* Delegate */,
 				3F568DF02A878220002A7A2E /* LaunchScreen.storyboard */,
@@ -144,6 +148,24 @@
 				3FE81EC22A9A65DA0077E18A /* OnboardingPageViewController.swift */,
 			);
 			name = Intro;
+			sourceTree = "<group>";
+		};
+		3FE81EFB2A9D25960077E18A /* MediaDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				3FE81EF92A9D25750077E18A /* MediaDetailView.swift */,
+				3F568E142A87B82D002A7A2E /* MediaDetailViewController.swift */,
+			);
+			path = MediaDetailView;
+			sourceTree = "<group>";
+		};
+		3FE81EFC2A9D28320077E18A /* MediaListView */ = {
+			isa = PBXGroup;
+			children = (
+				3F568E122A87AA3B002A7A2E /* MediaListViewController.swift */,
+				3FE81EFD2A9D28630077E18A /* MediaListView.swift */,
+			);
+			path = MediaListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,11 +258,13 @@
 				3FE81EC32A9A65DA0077E18A /* OnboardingPageViewController.swift in Sources */,
 				3F568E1A2A87CFD4002A7A2E /* MediaDetailTableViewCell.swift in Sources */,
 				3F568DFE2A878305002A7A2E /* ExtensionView.swift in Sources */,
+				3FE81EFA2A9D25750077E18A /* MediaDetailView.swift in Sources */,
 				3F568DE62A87821E002A7A2E /* AppDelegate.swift in Sources */,
 				3F568E112A87920C002A7A2E /* MediaInfo.swift in Sources */,
 				3FE81EBE2A9A63D10077E18A /* IntroViewController.swift in Sources */,
 				3F568DE82A87821E002A7A2E /* SceneDelegate.swift in Sources */,
 				3F35D4262A8E0360001DF40F /* Tmdb.swift in Sources */,
+				3FE81EFE2A9D28630077E18A /* MediaListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

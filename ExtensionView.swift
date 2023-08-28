@@ -18,3 +18,9 @@ extension UIView{
         return String(describing: self)
     }
 }
+
+
+protocol ViewSettingFuncsProtocol{
+    func addSubViews()
+    func constraintsView()
+}
