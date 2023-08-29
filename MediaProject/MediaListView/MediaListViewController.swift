@@ -12,8 +12,8 @@ import SnapKit
 
 class MediaListViewController: UIViewController {
     
-    let mainView = MediaListView()
-    var mediaListArray: TmdbListData.MovieListData = TmdbListData.MovieListData(page: 0, results: [], totalPages: 0, totalResults: 0)
+    private let mainView = MediaListView()
+    private var mediaListArray: TmdbListData.MovieListData = TmdbListData.MovieListData(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func loadView() {
         self.view = mainView
@@ -35,7 +35,7 @@ class MediaListViewController: UIViewController {
 
 //API
 extension MediaListViewController{
-    func apiData() {
+    private func apiData() {
         
         TmdbManager.shard.callApiData(url: "https://api.themoviedb.org/3/trending/movie/week?api_key=\(APIKey.tmdbKey)") { data in
 

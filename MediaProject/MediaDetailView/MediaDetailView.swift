@@ -75,6 +75,7 @@ class MediaDetailView: UIView, ViewSettingFuncsProtocol {
             backImageView.addSubview($0)
         }
     }
+    
     func constraintsView(){
 
         backImageView.snp.makeConstraints { make in

@@ -12,14 +12,14 @@ import SnapKit
 
 class MediaDetailViewController: UIViewController {
 
-    let mainView = MediaDetailView()
+    private let mainView = MediaDetailView()
     
-    var crewArray: [TmdbDetailData.Profile] = []
-    var castArray: [TmdbDetailData.Profile] = []
+    private var crewArray: [TmdbDetailData.Profile] = []
+    private var castArray: [TmdbDetailData.Profile] = []
     
     //MediaListViewController에서 값 넘겨줌
     var mediaData: TmdbListData.Result!
-    var isOverViewDown = false
+    private var isOverViewDown = false
     
     override func loadView() {
         self.view = mainView
@@ -43,7 +43,7 @@ class MediaDetailViewController: UIViewController {
         apiData()
     }
     
-    @objc func allOverViewButtonClick() {
+    @objc private func allOverViewButtonClick() {
         if isOverViewDown{
             mainView.overViewLabel.numberOfLines = 6
             mainView.allOverViewButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
@@ -59,7 +59,7 @@ class MediaDetailViewController: UIViewController {
 //API
 extension MediaDetailViewController{
     
-    func apiData() {
+    private func apiData() {
         
         TmdbManager.shard.callApiData(url: "https://api.themoviedb.org/3/movie/\(mediaData.id)/credits?api_key=\(APIKey.tmdbKey)") { data in
 
@@ -105,7 +105,7 @@ extension MediaDetailViewController: UITableViewDelegate, UITableViewDataSource{
 
 //viewSetting
 extension MediaDetailViewController{
-    func viewSetting() {
+    private func viewSetting() {
         guard let data = mediaData else { return }
 
         mainView.backImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/original/" + data.backdropPath))
