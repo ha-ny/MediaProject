@@ -29,6 +29,8 @@
 		3FE81EC32A9A65DA0077E18A /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EC22A9A65DA0077E18A /* OnboardingPageViewController.swift */; };
 		3FE81EFA2A9D25750077E18A /* MediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EF92A9D25750077E18A /* MediaDetailView.swift */; };
 		3FE81EFE2A9D28630077E18A /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EFD2A9D28630077E18A /* MediaListView.swift */; };
+		3FE81F422A9E6F4E0077E18A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81F412A9E6F4E0077E18A /* ProfileViewController.swift */; };
+		3FE81F452A9E705C0077E18A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81F442A9E705C0077E18A /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		3FE81EC22A9A65DA0077E18A /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		3FE81EF92A9D25750077E18A /* MediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailView.swift; sourceTree = "<group>"; };
 		3FE81EFD2A9D28630077E18A /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
+		3FE81F412A9E6F4E0077E18A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3FE81F442A9E705C0077E18A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				3F568E102A87920C002A7A2E /* MediaInfo.swift */,
 				3F35D4252A8E0360001DF40F /* Tmdb.swift */,
 				3F568DFD2A878305002A7A2E /* ExtensionView.swift */,
+				3FE81F432A9E704F0077E18A /* ProfileView */,
 				3F568E1E2A87DFA2002A7A2E /* API */,
 				3F568E1D2A87DF8F002A7A2E /* Delegate */,
 				3F568DF02A878220002A7A2E /* LaunchScreen.storyboard */,
@@ -166,6 +171,15 @@
 				3FE81EFD2A9D28630077E18A /* MediaListView.swift */,
 			);
 			path = MediaListView;
+			sourceTree = "<group>";
+		};
+		3FE81F432A9E704F0077E18A /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				3FE81F442A9E705C0077E18A /* ProfileView.swift */,
+				3FE81F412A9E6F4E0077E18A /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,10 +273,12 @@
 				3F568E1A2A87CFD4002A7A2E /* MediaDetailTableViewCell.swift in Sources */,
 				3F568DFE2A878305002A7A2E /* ExtensionView.swift in Sources */,
 				3FE81EFA2A9D25750077E18A /* MediaDetailView.swift in Sources */,
+				3FE81F452A9E705C0077E18A /* ProfileView.swift in Sources */,
 				3F568DE62A87821E002A7A2E /* AppDelegate.swift in Sources */,
 				3F568E112A87920C002A7A2E /* MediaInfo.swift in Sources */,
 				3FE81EBE2A9A63D10077E18A /* IntroViewController.swift in Sources */,
 				3F568DE82A87821E002A7A2E /* SceneDelegate.swift in Sources */,
+				3FE81F422A9E6F4E0077E18A /* ProfileViewController.swift in Sources */,
 				3F35D4262A8E0360001DF40F /* Tmdb.swift in Sources */,
 				3FE81EFE2A9D28630077E18A /* MediaListView.swift in Sources */,
 			);

@@ -8,13 +8,12 @@
 import UIKit
 import Alamofire
 import Kingfisher
-import SnapKit
 
 class MediaListViewController: UIViewController {
     
     private let mainView = MediaListView()
     private var mediaListArray: TmdbListData.MovieListData = TmdbListData.MovieListData(page: 0, results: [], totalPages: 0, totalResults: 0)
-    
+
     override func loadView() {
         self.view = mainView
     }
@@ -26,10 +25,16 @@ class MediaListViewController: UIViewController {
         mainView.mediaListTableView.delegate = self
         mainView.mediaListTableView.dataSource = self
 
+        mainView.profileButton.addTarget(self, action: #selector(profileButtonClick), for: .touchUpInside)
+        
         let nib = UINib(nibName: MediaListTableViewCell.identifier, bundle: nil)
         mainView.mediaListTableView.register(nib, forCellReuseIdentifier: MediaListTableViewCell.identifier)
         
         apiData()
+    }
+    
+    @objc func profileButtonClick() {
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
 }
 

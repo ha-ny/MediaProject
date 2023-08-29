@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 import Kingfisher
-import SnapKit
 
 class MediaDetailViewController: UIViewController {
 
