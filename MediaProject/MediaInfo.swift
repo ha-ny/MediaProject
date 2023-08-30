@@ -43,3 +43,22 @@ class TmdbManager{
     }
 }
 
+class ProfileList{
+
+    struct ProfileCase{
+        var title: String
+        var placeHolder: String
+    }
+    
+    enum TextFieldTag: Int{
+        case name
+        case nickName
+        case introduce
+    }
+    
+    static let ProfileTextField: [TextFieldTag:ProfileCase] = [
+        .name: ProfileCase(title: "이름", placeHolder: "이름을 입력해주세요"),
+        .nickName: ProfileCase(title: "사용자 이름", placeHolder: "사용자 이름을 입력해주세요"),
+        .introduce: ProfileCase(title: "소개", placeHolder: "인사말을 입력해주세요")
+    ]
+}

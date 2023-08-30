@@ -24,3 +24,8 @@ protocol ViewSettingFuncsProtocol{
     func addSubViews()
     func constraintsView()
 }
+
+protocol ProfileDataSendProtocol{
+    func profileEditData(title: String, placeHolder: String)
+}
+

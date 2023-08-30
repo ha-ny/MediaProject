@@ -31,6 +31,7 @@
 		3FE81EFE2A9D28630077E18A /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81EFD2A9D28630077E18A /* MediaListView.swift */; };
 		3FE81F422A9E6F4E0077E18A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81F412A9E6F4E0077E18A /* ProfileViewController.swift */; };
 		3FE81F452A9E705C0077E18A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81F442A9E705C0077E18A /* ProfileView.swift */; };
+		3FE81F4C2A9FACC70077E18A /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE81F4B2A9FACC70077E18A /* ProfileEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		3FE81EFD2A9D28630077E18A /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
 		3FE81F412A9E6F4E0077E18A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3FE81F442A9E705C0077E18A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3FE81F4B2A9FACC70077E18A /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				3FE81F442A9E705C0077E18A /* ProfileView.swift */,
 				3FE81F412A9E6F4E0077E18A /* ProfileViewController.swift */,
+				3FE81F4B2A9FACC70077E18A /* ProfileEditViewController.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				3FE81F452A9E705C0077E18A /* ProfileView.swift in Sources */,
 				3F568DE62A87821E002A7A2E /* AppDelegate.swift in Sources */,
 				3F568E112A87920C002A7A2E /* MediaInfo.swift in Sources */,
+				3FE81F4C2A9FACC70077E18A /* ProfileEditViewController.swift in Sources */,
 				3FE81EBE2A9A63D10077E18A /* IntroViewController.swift in Sources */,
 				3F568DE82A87821E002A7A2E /* SceneDelegate.swift in Sources */,
 				3FE81F422A9E6F4E0077E18A /* ProfileViewController.swift in Sources */,
